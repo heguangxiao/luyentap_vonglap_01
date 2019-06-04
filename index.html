@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 01</title>
+</head>
+<body>
+
+    <input type="button" id="btap1" value="Bai Tap 1" onclick="btap1();"/><br/>
+    <input type="button" id="btap2" value="Bai Tap 2" onclick="btap2();"/><br/>
+    <input type="button" id="btap3" value="Bai Tap 3" onclick="btap3();"/><br/>
+    <input type="button" id="btap4" value="Bai Tap 4" onclick="btap4();"/><br/>
+    <input type="button" id="btap5" value="Bai Tap 5" onclick="btap5();"/><br/>
+    <input type="button" id="btap6" value="Bai Tap 6" onclick="btap6();"/><br/>
+    <input type="button" id="btap7" value="Bai Tap 7" onclick="btap7();"/><br/>
+    <input type="button" id="btap8" value="Bai Tap 8" onclick="btap8();"/><br/>
+    <script>
+        function btap1() {
+            let message = "";
+            for (i=1;i<101;i++){
+                message = message + i + ' , ';
+                if (i==99){
+                    alert(message + ' hoan thanh');
+                    break;
+                }
+            }
+        }
+
+        function btap2() {
+            let value = null;
+            do {
+                value = prompt("Nhập vào số từ 20 -> 100");
+            } while (value < 20  || value > 100 );
+            alert("Số bạn vừa nhập là " + value);
+        }
+        
+        function btap3() {
+            let a = 0 , b = 1 , temp = 0 ;
+            let mess = '';
+
+            for (i=0;i<20;i++){
+                temp = a
+                a = a + b;
+                b = temp;
+                mess = mess + temp + ' , ';
+            }
+
+            alert(mess);
+        }
+        
+        function btap4() {
+            let a = 0 , b = 1 , temp = 0 ;
+
+            for (i=0;i<20;i++){
+                temp = a
+                a = a + b;
+                b = temp;
+                if (temp > 0 && temp%5==0){
+                    alert(temp);
+                    break;
+                }
+            }
+        }
+
+        function btap5() {
+            let a = 0 , b = 1 , temp = 0 ;
+            let mess = 0;
+
+            for (i=0;i<20;i++){
+                temp = a;
+                a = a + b;
+                b = temp;
+                mess = mess + temp;
+            }
+
+            alert(mess);
+        }
+        
+        function btap6() {
+            let n = 0;
+            let a = 0;
+            let mes = '';
+
+            for (i=1;;i++){
+                if(i%7 == 0){
+                    mes = mes + i + ',';
+                    n = n + i;
+                    a++;
+                    if (a == 30){
+                        break;
+                    }
+                }
+            }
+            alert(mes +'------'+ n);
+        }
+
+        function btap7() {
+            for (i=1;i<101;i++){
+                if (i%3==0 && i%5==0){
+                    document.write("FizzBuzz<br>");
+                } else if (i%3==0){
+                    document.write('Fizz<br>');
+                } else if (i%5==0){
+                    document.write('Buzz<br>');
+                } else {
+                    document.write(i + '<br>')
+                }
+            }
+        }
+
+        function btap8() {
+            let a1 = parseInt(prompt('nhap so nho nhat : '));
+            let a2 = parseInt(prompt('nhap so lon nhat : '));
+            let a = parseInt(Math.random() * (a2+1-a1)+a1);
+
+
+            for(;;){
+                let b = parseInt(prompt('nhap so ban doan'));
+                if ( b == a){
+                    alert('ok');
+                    break;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
